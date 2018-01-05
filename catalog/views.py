@@ -9,12 +9,6 @@ class ProductListView(ListView):
     template_name = 'catalog/product_list.html'
     paginate_by = 3
 
-# def product_list(request):
-#     context = {
-#         'product_list': Product.objects.all()
-#     }
-#     return render(request, 'catalog/product_list.html', context)
-
 
 class CategoryListView(ListView):
 
@@ -29,14 +23,6 @@ class CategoryListView(ListView):
         context = super(CategoryListView, self).get_context_data(**kwargs)
         context['current_category'] = get_object_or_404(Category, slug=self.kwargs['slug'])
         return context
-
-# def category(request, slug):
-#     category = Category.objects.get(slug=slug)
-#     context = {
-#         'current_category': category,
-#         'product_list': Product.objects.filter(category=category),
-#     }
-#     return render(request, 'catalog/category.html', context)
 
 
 def product(request, slug):
