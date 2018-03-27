@@ -1,0 +1,19 @@
+version: "2"
+services:
+    db:
+      image: postgres:10.3
+      container_name: ecommerce_db
+      ports:
+        - "5431:5432"
+      volumes:
+        - ./.db:/pgdata
+    webapp:
+      build: .
+      command: [ "./run_web.sh" ]
+      container_name: ecommerce_app
+      volumes:
+        - ./:/app/
+      ports:
+        - "8000:8000"
+      depends_on:
+        - db
