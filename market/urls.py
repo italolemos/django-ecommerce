@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('core.urls')),
     url(r'^entrar/$', login, name='login'),
-    url(r'^sair/$', logout, {'next': '/'}, name='logout'),
+    url(r'^sair/$', logout, {'next_page': 'index'}, name='logout'),
 
 ]
