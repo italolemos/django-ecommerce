@@ -6,7 +6,7 @@ services:
       ports:
         - "5431:5432"
       volumes:
-        - ./.db:/pgdata
+        - ./.db:/var/lib/postgresql/data
     webapp:
       build: .
       command: [ "./run_web.sh" ]
@@ -15,5 +15,6 @@ services:
         - ./:/app/
       ports:
         - "8000:8000"
+        - "5000:5000"
       depends_on:
         - db
