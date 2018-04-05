@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # APPS
     'core',
     'catalog',
+    'accounts',
     'widget_tweaks'
 ]
 
