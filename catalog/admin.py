@@ -6,6 +6,7 @@ from .models import Product, Category
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'created', 'modified']
     search_fields = ['name', 'slug']
+    prepopulated_fields = {'slug': ('name',)}
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -13,6 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['name', 'slug', 'category__name']
     list_filter = ['created', 'modified']
     actions = ['']
+    prepopulated_fields = {'slug': ('name',)}
 
 
 admin.site.register(Product, ProductAdmin)

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',
     'catalog',
     'accounts',
+    'checkout',
     'widget_tweaks'
 ]
 

@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('core.urls')),
     url(r'^conta/', include('accounts.urls', namespace='accounts')),
+    url(r'^compras/', include('checkout.urls', namespace='checkout')),
     url(r'^entrar/$', login, name='login'),
     url(r'^sair/$', logout, {'next_page': 'index'}, name='logout'),
 
